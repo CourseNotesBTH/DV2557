@@ -15,6 +15,19 @@ An IQ test measures what humans think intelligent humans should be good at - not
 * A weak AI is a machine that can act as if it is intelligent (simulated thinking). An example is a self-driving car.
 * A strong AI is a machine that is actually thinking (real thinking). Difficult to prove. We're not there yet.
 
+### Simple Reflex Agent
+
+Select actions based on the current perception and does not care about the percept history. The simplest of the agents. Does not care for future effects of it's actions. Implemented using condition-action. For example
+
+* if dirty then clean
+* if clean then move
+
+### Model-based reflex agent
+
+Has and maintains an internal model about the environment. The model is based on the percepts history. The agent also keeps track about how the world evolves and the effect the agents action might have on the environment. An example on how it might think is:
+
+* Where would i be in the world if i turn right in this crossing and drive for 5km?
+
 ### Goal-based agent
 
 ![image-20201021150008090](/Users/alexgustafsson/Library/Application Support/typora-user-images/image-20201021150008090.png)
@@ -27,8 +40,18 @@ An IQ test measures what humans think intelligent humans should be good at - not
 ![image-20201021150141574](/Users/alexgustafsson/Library/Application Support/typora-user-images/image-20201021150141574.png)
 
 * Uses an utility-function which states how desirable a state is
-* The agent choses an action that leads to the state with the highest utility
+* The agent chooses an action that leads to the state with the highest utility
 * More flexible than goal-based agents
+
+### Learning agent
+
+Is able to learn from it's percepts. For parts:
+ * Learning element: Responsible for making improvements.
+ * Performance: Responsible for selecting actions.
+ * Critic: Gives feedback on the agents action and how it's doing.
+ * Problem generator: Responsible for generating actions which will lead to future new experiences and new information.
+
+The agents problem lies in having to balance exploitation(Doing the things which will teach me new things) and exploitation(Doing what is best).
 
 ### Environments
 
@@ -138,7 +161,7 @@ A* is an implementation of greedy search which also uses the cost of each path i
 
 ![image-20201026131902088](/Users/alexgustafsson/Library/Application Support/typora-user-images/image-20201026131902088.png)
 
-A type of informed search (knowledge about the heuristic such as distance to goal). Always chooses the step with the lower heuristic. 
+A type of informed search (knowledge about the heuristic such as distance to goal). Always chooses the step with the lower heuristic.
 
 ## Learning-based algorithms
 
