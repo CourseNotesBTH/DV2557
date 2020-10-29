@@ -17,16 +17,20 @@ An IQ test measures what humans think intelligent humans should be good at - not
 
 ### Simple Reflex Agent
 
-Select actions based on the current perception and does not care about the percept history. The simplest of the agents. Does not care for future effects of it's actions. Implemented using condition-action. For example
+![image-20201029104207133](/Users/alexgustafsson/Library/Application Support/typora-user-images/image-20201029104207133.png)
 
-* if dirty then clean
-* if clean then move
+Select actions based on the current perception and does not care about the percept history. The simplest of the agents. Does not care for future effects of it's actions. Implemented using condition-action. For example:
+
+* If dirty then clean
+* If clean then move
 
 ### Model-based reflex agent
 
+![image-20201029104230297](/Users/alexgustafsson/Library/Application Support/typora-user-images/image-20201029104230297.png)
+
 Has and maintains an internal model about the environment. The model is based on the percepts history. The agent also keeps track about how the world evolves and the effect the agents action might have on the environment. An example on how it might think is:
 
-* Where would i be in the world if i turn right in this crossing and drive for 5km?
+* Where would I be in the world if I turn right in this crossing and drive for 5km?
 
 ### Goal-based agent
 
@@ -137,6 +141,12 @@ Used to schedule things (such as the Hubble Telescope).
 3. Update the variable to the value that causes the least number of conflicts
 4. Continue from step 3 until we are done or we reach the maximum number of iterations
 
+### Minimum Remaining Values (MRV)
+
+![image-20201029115005847](/Users/alexgustafsson/Library/Application Support/typora-user-images/image-20201029115005847.png)
+
+Similar to min-conflicts, but choses the variable with the fewest legal values. That way conflicts happen sooner and the tree can be pruned more quickly.
+
 ### Backtracking Search
 
 A depth-first search with backtracking for constraint checks.
@@ -151,17 +161,17 @@ A depth-first search with backtracking for constraint checks.
 * Bad at handling inconsistent data
 * Cannot learn all concepts
 
-### A*
-
-![image-20201026131924353](/Users/alexgustafsson/Library/Application Support/typora-user-images/image-20201026131924353.png)
-
-A* is an implementation of greedy search which also uses the cost of each path in addition to the heuristic.
-
 ### Greedy search
 
 ![image-20201026131902088](/Users/alexgustafsson/Library/Application Support/typora-user-images/image-20201026131902088.png)
 
 A type of informed search (knowledge about the heuristic such as distance to goal). Always chooses the step with the lower heuristic.
+
+### A*
+
+![image-20201026131924353](/Users/alexgustafsson/Library/Application Support/typora-user-images/image-20201026131924353.png)
+
+A* is an implementation of greedy search which also uses the cost of each path in addition to the heuristic.
 
 ## Learning-based algorithms
 
@@ -179,7 +189,7 @@ A type of informed search (knowledge about the heuristic such as distance to goa
 
 ### Overfitting
 
-Overfitting is when a model begins to describe random errors in the data instead of an actual relationship. Usually occurs when the model is too complex. Reduces its generalizability outside the original dataset.
+Overfitting is when a model begins to describe random errors in the data instead of an actual relationship (memorizes the training data). Usually occurs when the model is too complex. Reduces its generalizability outside the original dataset.
 
 ## Logic
 
@@ -194,6 +204,8 @@ Example: *The sun is hot and the ocean is wet*:
 * $p=$The sun is hot
 * $q=$ The ocean is wet
 * $p\wedge q$
+
+A shortcoming is that "all humans are mammals" requires at least as many expressions as there are humans - that is it does not have the $\forall$ (for all) and $\exists$ (exists) that First-Order Logic has. 
 
 ### First-Order Logic
 
