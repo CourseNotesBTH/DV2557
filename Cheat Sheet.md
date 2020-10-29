@@ -219,9 +219,14 @@ There are three types of symbols:
 * Predicate symbols (relations) - red, round, brother of
 * Function symbols (functions) - father of, best friend, plus
 
-Example: *Every student takes both math and chemistry*:
+Example: *Every student studies both math and chemistry*:
 $$
-\forall x:\text{Student}(x)\Rightarrow\text{Takes}(x,\text{Math})\wedge \text{Takes}(x, \text{Chemistry})
+\forall x:\text{Student}(x)\Rightarrow\text{Studies}(x,\text{Math})\wedge \text{Studies}(x, \text{Chemistry})
+$$
+
+Example: *Some students study biology*:
+$$
+\exists x: \text{Student}(x)\and \text{Studies}(x, Biology)
 $$
 
 ### Knowledge base
@@ -235,6 +240,8 @@ The main idea is to prove by contradiction, that $\Phi\wedge\neg(\Phi)$ is unsat
 ![Chaining](https://lh6.googleusercontent.com/aFMoBdlOQH9DtlVZhpQz6Gw0FG_ASJxt6L1UDtBMP_ookCTke0lu1eWUpcD7hWBOg-E_XKaeyASXRiyfyXvumJDTbzneVRn15KsUheikHvRBsyEptEItCthT-vjuyxtDWVnZhow0)
 
 The facts are stated at the bottom row with conjunctions above. For example, from this we can read that $\text{Missile}(T_1)\and\text{Owns}(A,T_1)\Rightarrow\text{Sells}(\text{Robert}, T_1, A)$.
+
+One should state clearly how *and* as well as *or* are marked. In this example, *and* is marked with a ring towards the junction.
 
 ### Conjunctive Normal Form
 
